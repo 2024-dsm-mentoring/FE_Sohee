@@ -1,12 +1,12 @@
-import './App.css'
-import GlobalFont from './styles/GlobalFont'
+import "./App.css"
+import { Router } from "./Router";
 
 function App(): JSX.Element {
   return (
     <>
-    <GlobalFont/>
+    <Router/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
