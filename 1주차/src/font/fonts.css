@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "bold";
+  src: url("./WantedSans-SemiBold.woff");
+}
+@font-face {
+  font-family: "med";
+  src: url("./WantedSans-Medium.woff");
+}
+@font-face {
+  font-family: "reg";
+  src: url("./WantedSans-Regular.woff");
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

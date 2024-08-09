@@ -37,7 +37,7 @@ const Login = () => {
 
 const DoSignIn = styled.div`
   margin-top: 17px;
-`
+`;
 const StyledBody = styled(Body2)`
   color: #3d8aff;
   display: inline;

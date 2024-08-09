@@ -1,19 +1,18 @@
 import styled from "styled-components";
-import "../styles/Text"
+import "../styles/Text";
 import { Button } from "../styles/Text";
 
 const ButtonComp = (props: any) => {
-  return(
+  return (
     <ButtonContainer>
       <Main>
         <Button>{props.text}</Button>
       </Main>
     </ButtonContainer>
-  )
-}
+  );
+};
 
-const ButtonContainer = styled.div`
-`
+const ButtonContainer = styled.div``;
 const Main = styled.div`
   width: 480px;
   height: 50px;
@@ -27,6 +26,6 @@ const Main = styled.div`
   color: white;
   margin-top: 38px;
   cursor: pointer;
-`
+`;
 
 export default ButtonComp;
