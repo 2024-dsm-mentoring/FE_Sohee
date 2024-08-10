@@ -5,14 +5,13 @@ import EyeImg from "../images/Vector.png";
 import EyeHidden from "../images/Vector (1).png";
 import { useState } from "react";
 
-const Input = (props: any) => {
-  const isPass = () => {
-    if (props.type === "password") {
-      return true;
-    } else {
-      return false;
-    }
-  };
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement>{
+  label?: string
+}
+
+const Input = (props: InputProps) => {
+
+  const isPass = props.type === "password"
 
   const [pwType, setPwType] = useState({
     type: "password",
@@ -31,7 +30,7 @@ const Input = (props: any) => {
   return (
     <InputContainer>
       <Label>{props.label}</Label>
-      {isPass() ? (
+      {isPass ? (
         <Main>
           <StyledInput type={pwType.type} placeholder={props.placeholder} />
           <StyledSpan onClick={handlePwType}>
@@ -53,7 +52,8 @@ const Input = (props: any) => {
 
 
 const StyledSpan = styled.span`
-  float: right;
+  display: flex;
+  justify-self: flex-end;
   margin-right: 12px;
   margin-top: 2px;
 `;
