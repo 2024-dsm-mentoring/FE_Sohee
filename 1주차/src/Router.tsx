@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import SignIn from "./pages/SignIn";
 import PostList from "./pages/PostList";
+import Write from "./pages/Write";
+import Notice from "./pages/Notice";
 
 export const Router = () => {
   return (
@@ -11,6 +13,8 @@ export const Router = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/postlist" element={<PostList />} />
+          <Route path="/write" element={<Write />} />
+          <Route path="/notice" element={<Notice />} />
         </Routes>
       </BrowserRouter>
     </>
