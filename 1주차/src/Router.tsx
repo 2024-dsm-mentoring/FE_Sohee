@@ -4,6 +4,7 @@ import SignIn from "./pages/SignIn";
 import PostList from "./pages/PostList";
 import Write from "./pages/Write";
 import Notice from "./pages/Notice";
+import Correction from "./pages/Correction";
 
 export const Router = () => {
   return (
@@ -15,6 +16,7 @@ export const Router = () => {
           <Route path="/postlist" element={<PostList />} />
           <Route path="/write" element={<Write />} />
           <Route path="/notice" element={<Notice />} />
+          <Route path="/correction" element={<Correction />} />
         </Routes>
       </BrowserRouter>
     </>

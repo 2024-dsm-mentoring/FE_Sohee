@@ -72,13 +72,16 @@ const StyledP = styled(H2)`
   float: left;
 `;
 const BigDiv = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
 `;
 const Main = styled.div`
   width: 483px;
   height: 526px;
+  position: absolute;
+  top: 244px;
 `;
 
 export default Login;
