@@ -12,36 +12,36 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement>{
 const Input = (props: InputProps) => {
 
   const isPass = props.type === "password"
+  // props.type(type으로 받은 프롭) 과 password(문자열, 프롭으로 받는 값)가 일치하면 true 값 반환
 
-  const [pwType, setPwType] = useState({
-    type: "password",
-    visible: false,
-  });
-  const handlePwType = () => {
-    setPwType(() => {
-      if (!pwType.visible) {
-        return { type: "text", visible: true };
-      } else {
-        return { type: "password", visible: false };
-      }
-    });
+  const [pwType, setPwType] = useState(false); // 비번 상태 기본은 false
+  const handlePwType = () => { // 비번 상태를 관리할것임
+    // setPwType(() => {
+    //   if (!pwType.visible) { // 비번이 보이는 상태인가?
+    //     return { type: "text", visible: true }; // 맞다면 
+    //   } else {
+    //     return { type: "password", visible: false }; // 아니라면
+    //   }
+    // });
+    setPwType(!pwType) // 비번 상태를 반대로 바꾸기
+
   };
 
   return (
     <InputContainer>
       <Label>{props.label}</Label>
-      {isPass ? (
+      {isPass ? ( // 프롭으로 받은 값이 패스워드니?
         <Main>
-          <StyledInput type={pwType.type} placeholder={props.placeholder} />
+          <StyledInput type={pwType ? "text":"password"} placeholder={props.placeholder} /> 
           <StyledSpan onClick={handlePwType}>
-            {pwType.visible ? (
-              <img src={EyeImg} alt="보임" />
-            ) : (
+            {pwType ? (
               <img src={EyeHidden} alt="숨김" />
+            ) : (
+              <img src={EyeImg} alt="보임" />
             )}
           </StyledSpan>
         </Main>
-      ) : (
+      ) : ( // 맞으면 비번인풋 아니면 그냥 인풋
         <Main>
           <StyledInput type={props.type} placeholder={props.placeholder} />
         </Main>
